@@ -1,0 +1,12 @@
+/* ---------- NAV ---------- */
+.header {
+  background-color: var(--bg-navbar);
+  color: var(--nxf-color-font-primary);
+}
+
+.logo {
+    height: 53px;
+    width: auto;
+}
+
+
