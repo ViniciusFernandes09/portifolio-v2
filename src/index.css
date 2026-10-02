@@ -1,108 +1,62 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+  :root{
+    --bg:#000000;
+    --bg-elevated:#070707;
+    --bg-card:#15170f;
+    --text:#ffffff;
+    --text-muted:#8a8f87;
+    --text-interaction:#FF6800;
+    --green-dim:#5c2500;
+    --gold:#b8823d;
+    --line: #323232;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  ::selection{background:var(--green-dim); color:#fff;}
 
-
-:root{
-  --bg:#030303;
-  --bg-elevated:#0a0a0a;
-
-  --bg-navbar:#ff0505;
-  --bg-navbar-line: #767676;
-
-  --text:#e8e4dc;
-  --text-muted:#8a8f87;
-  --green:#FF6800;
-  --green-dim:#5c2500;
-  --gold:#b8823d;
-  --line: rgba(232,228,220,0.09);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Open Sans";
-}
-
-a,
-a:hover {
-  text-decoration: none;
-  color: unset;
-}
-
-
-
-main {
-  padding: 0 20px;
-}
-
-/* ---------- NAV ---------- */
-/* header styles */
-header {
-  height: 70px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  position:fixed; top:18px; left:18px; right:18px; z-index:50;
-  max-width:1200px; margin:0 auto;
-  border:1px solid var(--bg-navbar);
-  border-radius:20px;
-  box-shadow:0 25px 50px -20px rgba(252, 252, 252, 0.6);
-  backdrop-filter:blur(16px) saturate(160%);
-  -webkit-backdrop-filter:blur(16px) saturate(160%);
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background:var(--bg-navbar);
-}
-
-nav h1 {
-  font-size: 16px;
-}
-
-nav a {
-  font-size: 14px;
-}
-
-.navbar-right {
-  display: flex;
-  align-items: right;
-}
-
-.menu-items-container {
-  display: flex;
-}
-
-.menu-items-container img {
-  width: 20px;
-  height: 20px;
-}
-
-.menu-item {
-  margin-right: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.menu-item p {
-  display: none;
-  margin-left: 5px;
-  font-size: 14px;
-}
-
-@media (min-width: 576px) {
-  nav h1 {
-    font-size: 24px;
+  h1,h2,h3, .display{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    line-height:1.05;
   }
 
-  .nxf-menu-item p {
-    display: unset;
-  }
-}
+.wrap{max-width:1300px; margin:0 auto; padding:0 32px;}
 
-/*-----------------------------------------------------------------*/
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed; top:18px; left:18px; right:18px; z-index:50;
+    max-width:1200px; margin:0 auto;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:30px;
+    box-shadow:0 25px 50px -20px rgba(22, 22, 22, 0.6);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:8px 24px;
+    font-weight: 600;
+  }
+
+  .logo{
+    display:flex; 
+    align-items:center; 
+    gap:10px;
+  }
+
+  .logo span{color:var(--text-interaction);}
+  .nav-links{display:flex; align-items:center; gap:32px; list-style:none;}
+  .nav-links a{font-size:14px; color:var(--text); transition:color .6s;}
+  .nav-links a:hover, .nav-links a:focus-visible{color:var(--text-interaction);}
+  .nav-links a.active{color:var(--text-interaction); font-weight:600;}
 
   /* ---------- HERO ---------- */
   .hero{
@@ -110,12 +64,12 @@ nav a {
     display:grid;
     grid-template-columns: 0.9fr 1.1fr;
     align-items:center;
-    padding-top:112px;
+    padding-top:140px;
     gap:40px;
   }
   .hero-text{padding:60px 0;}
   .hero-eyebrow{
-    color:var(--green);
+    color:var(--text-interaction);
     font-size:15px;
     margin-bottom:18px;
     opacity:0;
@@ -392,6 +346,7 @@ nav a {
     .panel-content{padding:22px 20px;}
     .panel-content h3{font-size:19px;}
     .nav-links{display:none;}
+    header{top:12px; left:12px; right:12px; border-radius:16px;}
     section{padding:80px 0;}
   }
   @media (prefers-reduced-motion: reduce){
