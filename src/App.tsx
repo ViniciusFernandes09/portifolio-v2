@@ -1,15 +1,12 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from '../src/routes/Home'
+import { BrowserRouter } from "react-router-dom";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 export default function App() {
-
   return (
     <BrowserRouter>
-      <Routes>
-        <Route 
-          path="/" element={<Home />}>
-        </Route>
-      </Routes>
+      <Header />
+      <Hero />
     </BrowserRouter>
   );
 }
